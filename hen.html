@@ -128,8 +128,8 @@ var xtra_data,
 	flash_partition='xxxxCELL_FS_IOS:BUILTIN_FLSH1',
 	filesystem='CELL_FS_FAT',
 	mount_path='/dev_rewrite',
-        fail_msg_frag="<h1><span style='color:red'>Something went wrong, try again! </h1></span>",
-        progress_msg_frag1="<h1>Hacking PS3... ",
+        fail_msg_frag="<h1><span style='color:red'>Algo salio mal, intenta nuevamente actualizando la pagina! </h1></span>",
+        progress_msg_frag1="<h1>Liberando PS3... ",
         progress_msg_frag2='%</h1>',
         write_file = "/dev_rewrite/vsh/resource/explore/xmb/category_network.xml",
         baseURL = window.location.href.replace(/[^/]*$/, ''),
@@ -317,7 +317,7 @@ function checkMemory(address, size, len)
 function trigger(exploit_addr){
 	if(document.getElementById('trigger')){document.getElementById("trigger").innerHTML = -parseFloat("NAN(ffffe" + exploit_addr.toString(16) + ")");}
 	if (document.getElementById('trigger').innerHTML.indexOf("NaN") != -1) {
-		document.write("<html><h1><span style='color:red'>You must install Hybrid Firmware (HFW) before installing HEN!</h1></span></html>");
+		document.write("<html><h1><span style='color:red'>Primero debes instalar el Firmware Hibrido (HFW) en 4.88, Antes de instalar HEN!</h1></span></html>");
 		return;
 	}
 }
@@ -529,7 +529,7 @@ function initROP(init)
 function triggerX()
 {
         setTimeout(trigger,100,jump_1_addr);
-        setTimeout(showResult,2000,"<h1>Installation instructions</h1><h2>1. Close the browser<br>2. Open remote use and exit immediately<br>3. Use the new icon to download and install HEN </span><br>4. Restart the PS3 console</h2>");
+        setTimeout(showResult,2000,"<h1>Instruccion de instalacion</h1><h2>1. Cierra el Navegador<br>2. Abre el control remoto inmediatamente<br>3. Hacer click sobre el nuevo icono para descargar e instalar HEN</span><br>4. Reinicia tu PS3</h2>");
         t_out=0;
         total_loops=0;
 }
